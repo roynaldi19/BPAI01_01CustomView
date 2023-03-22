@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.roynaldi19.bpai01_01customview.MyEditText
+    <com.roynaldi19.dc4_01customview.MyEditText
         android:id="@+id/my_edit_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.roynaldi19.bpai01_01customview.MyButton
+    <com.roynaldi19.dc4_01customview.MyButton
         android:id="@+id/my_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

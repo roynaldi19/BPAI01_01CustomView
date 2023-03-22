@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "BPAI01_01CustomView"
+rootProject.name = "DC4_01CustomView"
 include ':app'

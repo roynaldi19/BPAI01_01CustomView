@@ -1,4 +1,4 @@
-package com.roynaldi19.bpai01_01customview
+package com.roynaldi19.dc4_01customview
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
