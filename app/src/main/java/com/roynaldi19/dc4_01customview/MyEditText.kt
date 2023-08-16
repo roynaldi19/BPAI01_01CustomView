@@ -12,7 +12,7 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 
 class MyEditText : AppCompatEditText, View.OnTouchListener {
-    private lateinit var mClearButtonImage: Drawable
+    private lateinit var clearButtonImage: Drawable
 
     constructor(context: Context) : super(context) {
         init()
@@ -38,7 +38,7 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
     }
 
     private fun init() {
-        mClearButtonImage =
+        clearButtonImage =
             ContextCompat.getDrawable(context, R.drawable.ic_baseline_close_24) as Drawable
 
         setOnTouchListener(this)
@@ -63,7 +63,7 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
         setCompoundDrawablesWithIntrinsicBounds(
             null,
             null,
-            mClearButtonImage,
+            clearButtonImage,
             null
         )
     }
@@ -85,14 +85,15 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
             var isClearButtonClicked = false
             when (layoutDirection) {
                 View.LAYOUT_DIRECTION_RTL -> {
-                    clearButtonEnd = (mClearButtonImage.intrinsicWidth + paddingStart).toFloat()
+                    clearButtonEnd = (clearButtonImage.intrinsicWidth + paddingStart).toFloat()
                     when {
                         event.x < clearButtonEnd -> isClearButtonClicked = true
                     }
                 }
+
                 else -> {
                     clearButtonStart =
-                        (width - paddingEnd - mClearButtonImage.intrinsicWidth).toFloat()
+                        (width - paddingEnd - clearButtonImage.intrinsicWidth).toFloat()
                     when {
                         event.x > clearButtonStart -> isClearButtonClicked = true
                     }
@@ -101,15 +102,16 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
             when {
                 isClearButtonClicked -> when {
                     event.action == MotionEvent.ACTION_DOWN -> {
-                        mClearButtonImage = ContextCompat.getDrawable(
+                        clearButtonImage = ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_baseline_close_24
                         ) as Drawable
                         showClearButton()
                         return true
                     }
+
                     event.action == MotionEvent.ACTION_UP -> {
-                        mClearButtonImage = ContextCompat.getDrawable(
+                        clearButtonImage = ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_baseline_close_24
                         ) as Drawable
@@ -119,8 +121,10 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
                         hideClearButton()
                         return true
                     }
+
                     else -> return false
                 }
+
                 else -> return false
             }
         }
